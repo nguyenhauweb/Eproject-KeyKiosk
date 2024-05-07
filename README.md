@@ -16,7 +16,7 @@
 
 =======================================
 
-Documentations : https://github.com/z1001st/Eproject-KeyKiosk/tree/main/01.%20Documentations
+Documentations : https://github.com/z1001st/Eproject-KeyKiosk/tree/main/Documentations
 
 =======================================
 
