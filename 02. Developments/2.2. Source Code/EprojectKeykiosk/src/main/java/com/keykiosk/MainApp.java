@@ -23,33 +23,6 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         Model.getInstance().getViewFactory().setCurrentStage(stage);
         Model.getInstance().getViewFactory().showLoginWindow();
-
-        OrderService orderService = applicationContext.getBean(OrderService.class);
-        orderService.getAllOrders();
-
-//        OrderDTO orderDTO = new OrderDTO();
-//        orderDTO.setPaymentMethod(PaymentMethod.BANK_TRANSFER);
-//        orderDTO.setTotalAmount(BigDecimal.valueOf(1000.0));
-//        orderDTO.setOrderStatus(OrderStatus.PENDING);
-//        orderDTO.setQuantity(1);
-//        orderDTO.setAccountId(1L);
-//        orderDTO.setProductId(1L);
-//        orderService.createOrder(orderDTO);
-//
-//        OrderDTO orderDTO = new OrderDTO();
-//        orderDTO.setOrderId(5L);
-//        orderDTO.setPaymentMethod(PaymentMethod.BANK_TRANSFER);
-//        orderDTO.setTotalAmount(BigDecimal.valueOf(1200.0));
-//        orderDTO.setOrderStatus(OrderStatus.PENDING);
-//        orderDTO.setQuantity(1);
-//        orderDTO.setAccountId(1L);
-//        orderDTO.setProductId(1L);
-//        orderService.updateOrder(orderDTO);
-//
-//        orderService.getAllOrders();
-
-//        orderService.deleteOrder(orderDTO);
-
     }
 
     public static void main(String[] args) {
