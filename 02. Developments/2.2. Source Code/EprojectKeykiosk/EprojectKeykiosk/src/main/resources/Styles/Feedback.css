@@ -1,0 +1,20 @@
+.my-button{
+    -fx-background-color: #2F3C7E;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+.my-button:hover{
+    -fx-background-color: #1E2761;
+    /*-fx-translate-x: 2px;*/
+    -fx-cursor: hand;
+    -fx-transition: background-color 2s, text-fill 1s;
+}
+
+.my-container{
+    -fx-background-color:  #2F3C7E;
+}
+
+.my-button-active {
+    -fx-background-color: #1E2761;
+}
+

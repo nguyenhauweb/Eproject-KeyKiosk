@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefWidth="400.0" styleClass="container" stylesheets="@../../Styles/Reset.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.UpdateProductController">
+   <HBox layoutX="25.600000381469727" layoutY="60.79999923706055" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0">
+      <children>
+          <VBox styleClass="form-container">
+            <VBox styleClass="form-container">
+               <children>
+                  <Label text="Upload Image" />
+                  <VBox alignment="CENTER" prefHeight="100.0" prefWidth="258.0" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="changeImages" fitHeight="70.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/upload.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image size must be less than 1Mb" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="selectImageButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="402.0" styleClass="light-gray-button" text="Upload Image" />
+                  <Label text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="productNameField" prefHeight="32.0" prefWidth="293.0" />
+                  <Label text="Price">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="priceProductField" />
+                  <Label text="Description">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="descriptionProductTextArea" prefHeight="100.0" prefWidth="350.0" />
+                  <Label text="Status">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </VBox>
+            <ComboBox fx:id="statusComboBox" prefHeight="31.0" prefWidth="150.0" />
+              <HBox spacing="20.0">
+                  <VBox.margin>
+                      <Insets top="10.0" />
+                  </VBox.margin>
+                  <JFXButton fx:id="UpdateButton" alignment="CENTER" prefHeight="35.0" prefWidth="100.0" styleClass="green-button" text="Update" />
+                  <JFXButton fx:id="CloseButton" prefHeight="35.0" prefWidth="100.0" styleClass="red-button" text="Cancel" />
+              </HBox>
+          </VBox>
+      </children>
+   </HBox>
+    <VBox layoutX="26.0" layoutY="14.0" spacing="3.0">
+        <Label alignment="CENTER" text="UPDATE PRODUCT">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Separator />
+    </VBox>
+</AnchorPane>

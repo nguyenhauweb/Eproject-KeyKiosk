@@ -1,0 +1,1 @@
+jdbc:sqlserver://localhost:1433;databaseName=keykiosktest22222222;user=sa;password=123;encrypt=false;

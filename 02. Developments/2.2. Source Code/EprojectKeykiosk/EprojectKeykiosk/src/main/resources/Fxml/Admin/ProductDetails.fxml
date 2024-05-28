@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane styleClass="container" stylesheets="@../../Styles/Reset.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.ProductDetailsController">
+   <children>
+      <VBox layoutX="42.0" layoutY="96.80000000000001" prefWidth="650.0" spacing="8.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="55.0">
+         <children>
+            <HBox prefHeight="146.0" prefWidth="632.0" spacing="20.0">
+               <VBox spacing="8.0">
+                  <StackPane styleClass="image-view-border">
+                     <children>
+                        <ImageView fx:id="imageViewProduct" fitHeight="142.0" fitWidth="334.0" pickOnBounds="true" preserveRatio="true">
+         <!--                        <clip>-->
+         <!--                           <Rectangle arcHeight="20.0" arcWidth="20.0" height="100.0" width="200.0" />-->
+         <!--                        </clip>-->
+                           <image>
+                              <Image url="@../../Images/Account/Avast-DriverUpdater-1tb-88931.png" />
+                           </image>
+                        </ImageView>
+                        <VBox prefWidth="286.0" spacing="8.0">
+                           <children>
+                              <Label fx:id="statusProductLabel" styleClass="productStatus-button" text="AVAILABLE" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </StackPane>
+               </VBox>
+
+
+               <VBox spacing="8.0">
+                  <children>
+                     <VBox spacing="5.0">
+                        <children>
+                           <Label styleClass="label-title" text="Name" />
+                           <Label fx:id="namProductLabel" styleClass="label-text" text="Google Drive 5000b" />
+                        </children>
+                     </VBox>
+                     <VBox spacing="5.0">
+                        <children>
+                           <Label styleClass="label-title" text="Price" />
+                           <Label fx:id="priceProductLabel" styleClass="label-text" text="10.00$" />
+                        </children>
+                     </VBox>
+                     <VBox spacing="5.0">
+                        <children>
+                           <Label styleClass="label-title" text="Quantity" />
+                           <Label fx:id="quantityProductLabel" styleClass="label-text" text="10" />
+                        </children>
+                     </VBox>
+                  </children>
+               </VBox>
+            </HBox>
+            <Label styleClass="label-title" text="Description">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Label>
+            <ScrollPane>
+               <content>
+                  <TextFlow>
+                     <children>
+                        <VBox>
+                           <children>
+                              <Label fx:id="descriptionProductLabel" alignment="TOP_LEFT" contentDisplay="TOP" prefWidth="648.0" styleClass="label-text" text="Tài khoản Canva giá rẻ chứa đầy đủ tài nguyên thiết kế miễn phí mà bạn có thể sử dụng ngay từ bên trong ứng dụng hoặc trang web và bắt đầu tạo đồ họa cho trang web, banner, mẫu bìa quảng cáo và phương tiện truyền thông xã hội của bạn. Canva là một công cụ tuyệt vời cho mọi người phải tạo đồ họa hoặc chỉnh sửa ảnh trong thời gian ngắn mà không cần bất kỳ kỹ năng thiết kế nào." textAlignment="JUSTIFY" wrapText="true" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </TextFlow>
+               </content>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </ScrollPane>
+            <VBox>
+               <children>
+                  <Label styleClass="label-header" text="Available Products List" />
+                  <Line endX="77.69288635253906" endY="0.8928802609443665" startX="-100.0" />
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" spacing="10.0">
+               <children>
+                  <ComboBox fx:id="filterSearchComboBox" prefWidth="150.0" />
+                  <TextField fx:id="searchField" promptText="Search..." />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <TableView fx:id="productListTableView" prefHeight="300.0" styleClass="bg-white-table-view">
+               <columns>
+                  <TableColumn prefWidth="75.0" text="Code ID" />
+                  <TableColumn prefWidth="123.20001983642578" text="License Key" />
+               </columns>
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER_LEFT" layoutX="9.6" layoutY="9.6" prefHeight="54.0" prefWidth="673.0" styleClass="background-color-panel" AnchorPane.leftAnchor="-11.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="-11.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label text="PRODUCT DETAILS" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Line endX="61.692848205566406" endY="-8.25762763270177E-5" startX="-100.0" stroke="WHITE" />
+               </children>
+               <VBox.margin>
+                  <Insets left="15.0" />
+               </VBox.margin>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

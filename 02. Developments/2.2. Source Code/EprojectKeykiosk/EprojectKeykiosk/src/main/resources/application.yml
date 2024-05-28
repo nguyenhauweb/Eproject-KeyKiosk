@@ -1,0 +1,15 @@
+spring:
+#  datasource:
+#    url: jdbc:sqlserver://localhost:1433;databaseName=keykiosk222;encrypt=false
+#    username: sa
+#    password: 123
+#    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        dialect: org.hibernate.dialect.SQLServerDialect
+    database: sql_server

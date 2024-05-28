@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.shape.Circle?>
+<AnchorPane prefHeight="750.0" prefWidth="205.0" styleClass="my-container" stylesheets="@../../Styles/Feedback.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.AdminMenuController">
+   <VBox spacing="10.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
+      <children>
+         <HBox alignment="CENTER_LEFT" spacing="10.0">
+            <children>
+                <ImageView fx:id="avatarUserImageView" fitHeight="50.0" fitWidth="50.0">
+                    <clip>
+                        <Circle centerX="25" centerY="25" radius="25" />
+                    </clip>
+                    <image>
+                        <Image url="@../../Images/profile2.png" />
+                    </image>
+                </ImageView>
+               <VBox alignment="CENTER_LEFT" spacing="3.0">
+                  <children>
+                     <Label fx:id="fullNameUser_lbl" text="Nguyễn Thanh Hậu" textFill="WHITE">
+                        <font>
+                           <Font name="System Bold" size="12.0" />
+                        </font>
+                     </Label>
+                     <Label fx:id="roleUser_lbl" text="ADMIN" textFill="WHITE" />
+                     <Line endX="59.29292297363281" endY="0.5928909182548523" startX="-100.0" stroke="WHITE" />
+                  </children>
+               </VBox>
+            </children>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+         </HBox>
+      </children>
+   </VBox>
+    <VBox fx:id="buttonContainer" layoutX="11.0" layoutY="79.0" prefWidth="202.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="10.599999999999994" AnchorPane.topAnchor="85.0">
+        <Button fx:id="dashboard_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Dashboard">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/data-report.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="accounts_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Accounts">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/id-card.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="category_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Category">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/editing.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="product_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="46.0" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Products">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/features.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="softwareAccount_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="154.0" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Software Account">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/add-friend.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="softwareLicensee_btn" alignment="BASELINE_LEFT" layoutX="10.0" layoutY="118.0" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Licsense Key">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/key.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+            <VBox.margin>
+                <Insets />
+            </VBox.margin>
+        </Button>
+        <Button fx:id="orders_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Orders">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/shopping-list.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+      <Line endX="120.89291381835938" endY="0.8285682797431946" startX="-100.0" stroke="WHITE" />
+        <Button fx:id="profile_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Profile">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/profile.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+        <Button fx:id="logout_btn" alignment="BASELINE_LEFT" mnemonicParsing="false" prefWidth="300.0" styleClass="my-button" stylesheets="@../../Styles/Feedback.css" text="Logout">
+            <graphic>
+                <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../Images/logout.png" />
+                    </image>
+                </ImageView>
+            </graphic>
+        </Button>
+    </VBox>
+</AnchorPane>

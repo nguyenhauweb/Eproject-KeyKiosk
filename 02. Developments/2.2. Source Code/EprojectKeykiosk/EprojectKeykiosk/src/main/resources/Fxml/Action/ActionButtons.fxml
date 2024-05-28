@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" spacing="5.0" styleClass="action-button" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Components.ActionButtonsController">
+    <Button fx:id="updateButton" mnemonicParsing="false" styleClass="icon-edit">
+        <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="23" />
+        </graphic>
+    </Button>
+    <Button fx:id="deleteButton" mnemonicParsing="false" styleClass="icon-delete">
+        <graphic>
+            <FontAwesomeIconView glyphName="TRASH_ALT" size="23" />
+        </graphic>
+    </Button>
+</HBox>

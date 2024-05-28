@@ -1,0 +1,27 @@
+.container{
+    -fx-background-color: #8AAAE5;
+}
+
+.classText{
+    -fx-text-fill: white;
+    -fx-font-family: Tahoma;
+}
+
+.classTextParag{
+    /*-fx-text-fill: white;*/
+    -fx-font-family: Tahoma;
+    -fx-font-size: 14px;
+}
+.classBtnAction{
+    -fx-padding: 5 20 5 20;
+    -fx-font-family: Tahoma;
+    -fx-font-size: 14px;
+
+}
+.classMybutton{
+    -fx-background-color: #8AAAE5;
+    -fx-font-family: Tahoma;
+    -fx-font-style: Bold;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+}

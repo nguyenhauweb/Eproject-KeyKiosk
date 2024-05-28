@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="400.0" styleClass="container" stylesheets="@../../Styles/Reset.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.UpdateDialogSoftwareLicenseKey">
+   <VBox layoutX="36.0" layoutY="61.0" maxHeight="-Infinity" spacing="8.0" styleClass="form-container" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0">
+      <children>
+         <Label text="License Key" />
+         <TextArea fx:id="licenseKeyTextArea" prefHeight="100.0" prefWidth="200.0" />
+         <Label text="Status:" />
+         <ComboBox fx:id="statusComboBox" layoutX="150.0" layoutY="300.0" prefHeight="32.0" prefWidth="100.0">
+            <items>
+               <FXCollections fx:factory="observableArrayList">
+                  <!--                                  <String fx:value="Active" />-->
+                  <!--                                  <String fx:value="Inactive" />-->
+               </FXCollections>
+            </items>
+         </ComboBox>
+         <HBox spacing="20.0">
+            <children>
+               <JFXButton fx:id="UpdateButton" alignment="CENTER" prefHeight="35.0" prefWidth="100.0" styleClass="green-button" text="Update" />
+               <JFXButton fx:id="CloseButton" prefHeight="35.0" prefWidth="100.0" styleClass="red-button" text="Cancel" />
+            </children>
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin>
+         </HBox>
+      </children>
+   </VBox>
+   <VBox layoutX="36.0" layoutY="14.0" spacing="3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label alignment="CENTER" text="UPDATE LICENSE KEY">
+            <font>
+               <Font name="System Bold" size="16.0" />
+            </font>
+         </Label>
+         <Separator prefHeight="0.0" prefWidth="48.0" />
+      </children>
+   </VBox>
+</AnchorPane>

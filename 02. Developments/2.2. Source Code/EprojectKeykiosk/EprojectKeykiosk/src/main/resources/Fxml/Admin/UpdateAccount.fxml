@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="400.0" styleClass="container" stylesheets="@../../Styles/Reset.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.UpdateAccountController">
+    <VBox layoutX="57.6" layoutY="21.6" spacing="3.0" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="0.0">
+        <Label alignment="CENTER" text="UPDATE USER">
+           <font>
+               <Font name="System Bold" size="16.0" />
+           </font>
+        </Label>
+        <Separator />
+    </VBox>
+    <VBox layoutX="36.0" layoutY="61.0" styleClass="form-container" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="50.0">
+        <Label text="Username:" />
+        <TextField fx:id="UsernameField" editable="false" prefHeight="34.0" prefWidth="350.0" styleClass="input_field" />
+        <Label text="Full Name:" />
+        <TextField fx:id="FullNameField" styleClass="input_field" />
+        <Label text="Email:" />
+        <TextField fx:id="EmailField" prefHeight="35.0" prefWidth="350.0" styleClass="input_field" />
+        <Label text="Password:" />
+        <PasswordField fx:id="PasswordField" />
+        <Label text="Status:" />
+        <ComboBox fx:id="statusComboBox" layoutX="150.0" layoutY="300.0" prefHeight="32.0" prefWidth="100.0">
+           <items>
+               <FXCollections fx:factory="observableArrayList">
+                   <!--                                  <String fx:value="Active" />-->
+                   <!--                                  <String fx:value="Inactive" />-->
+               </FXCollections>
+           </items>
+        </ComboBox>
+        <HBox spacing="20.0">
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+            <JFXButton fx:id="UpdateButton" alignment="CENTER" prefHeight="35.0" prefWidth="100.0" styleClass="green-button" text="Update" />
+            <JFXButton fx:id="CloseButton" prefHeight="35.0" prefWidth="100.0" styleClass="red-button" text="Cancel" />
+        </HBox>
+    </VBox>
+</AnchorPane>

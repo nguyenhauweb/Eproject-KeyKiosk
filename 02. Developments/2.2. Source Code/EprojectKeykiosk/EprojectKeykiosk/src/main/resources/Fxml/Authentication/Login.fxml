@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<AnchorPane prefHeight="364.0" prefWidth="657.0" styleClass="login_container" stylesheets="@../../Styles/Login.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Authentication.LoginController">
+   <VBox prefHeight="400.0" prefWidth="262.0" styleClass="login_logo_container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="login-container-text" text="KeyKiosK">
+         <font>
+            <Font name="Eras Bold ITC" size="36.0" />
+         </font>
+         <VBox.margin>
+            <Insets bottom="20.0" />
+         </VBox.margin>
+      </Text>
+      <ImageView fitHeight="200.0" fitWidth="200.0">
+         <Image url="@../../Images/key_4429438.png" />
+      </ImageView>
+   </VBox>
+   <VBox id="choice-prompt-text" layoutX="235.0" layoutY="14.0" prefHeight="281.0" prefWidth="355.0" styleClass="login_form_container" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+      <Label fx:id="username_lbl" text="Username:" />
+      <TextField fx:id="username_fld" styleClass="input_field" />
+      <Label fx:id="password_lbl" layoutX="10.0" layoutY="95.0" text="Password:" />
+      <PasswordField fx:id="password_fld" layoutX="10.0" layoutY="129.0" styleClass="input_field" />
+      <Button fx:id="login_btn" mnemonicParsing="false" prefHeight="14.0" prefWidth="362.0" text="Login">
+         <VBox.margin>
+            <Insets top="5.0" />
+         </VBox.margin>
+      </Button>
+      <Label fx:id="error_lbl" prefHeight="19.0" prefWidth="70.0" styleClass="error_lbl">
+         <VBox.margin>
+            <Insets right="10.0" />
+         </VBox.margin></Label>
+   </VBox>
+   <HBox alignment="CENTER" layoutY="251.2" prefHeight="42.0" prefWidth="355.0" spacing="10.0" styleClass="hbox_button_form" AnchorPane.bottomAnchor="71.19999999999999" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="241.0">
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="I don't have an account" wrappingWidth="150.39998016357413">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Button fx:id="signUp_btn" mnemonicParsing="false" prefHeight="28.0" prefWidth="73.0" text="Sign Up" />
+      <Button fx:id="resetPass_btn" mnemonicParsing="false" prefHeight="28.0" prefWidth="138.0" text="Recovery password?" />
+   </HBox>
+</AnchorPane>

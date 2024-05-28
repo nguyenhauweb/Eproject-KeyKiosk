@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.SoftwareKeyController"  >
+    <children>
+        <!-- Title Section -->
+        <HBox alignment="CENTER">
+            <Label text="Software Keys Management" style="-fx-font-size: 18px; -fx-font-weight: bold;" />
+        </HBox>
+
+        <!-- Search and Filter Section -->
+        <HBox spacing="10" alignment="CENTER" >
+            <TextField fx:id="searchTextField" promptText="Search..." />
+            <ComboBox fx:id="filterComboBox" promptText="Filter by Status" />
+            <Button text="Add New" onAction="#handleAddButton" />
+            <Button text="Export" onAction="#handleExportButton" />
+            <Button text="Import" onAction="#handleImportButton" />
+        </HBox>
+
+        <!-- Table Section -->
+        <TableView fx:id="softwareKeyTableView" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="nameColumn" text="Name" />
+                <TableColumn fx:id="keyColumn" text="Key" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

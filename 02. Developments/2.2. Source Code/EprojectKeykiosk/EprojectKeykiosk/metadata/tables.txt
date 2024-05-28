@@ -1,0 +1,246 @@
+create table dbo.accounts
+(
+    account_id    bigint identity
+        primary key,
+    balance       numeric(38, 2),
+    created_at    datetime2(6)  not null,
+    email         varchar(255)  not null
+        constraint UK_n7ihswpy07ci568w34q0oi8he
+            unique,
+    full_name     nvarchar(255) not null,
+    password_hash varchar(255)  not null,
+    role          varchar(255)  not null,
+    status        varchar(255)  not null,
+    updated_at    datetime2(6),
+    username      varchar(255)  not null
+        constraint UK_k8h1bgqoplx0rkngj01pm1rgp
+            unique
+)
+go
+
+create table dbo.categories
+(
+    category_id bigint identity
+        primary key,
+    description nvarchar(255),
+    name        nvarchar(255) not null
+        constraint UK_t8o6pivur7nn124jehx7cygw5
+            unique,
+    status      varchar(255)  not null,
+    account_id  bigint
+        constraint FKqkk6erxi4k4kpk027kr1sc73t
+            references dbo.accounts
+)
+go
+
+create index idx_name
+    on dbo.categories (name)
+go
+
+create table dbo.customers
+(
+    customer_id  bigint identity
+        primary key,
+    address      nvarchar(255) not null,
+    created_at   datetime2(6)  not null,
+    email        varchar(255)  not null
+        constraint UK_rfbvkrffamfql7cjmen8v976v
+            unique,
+    full_name    nvarchar(255) not null,
+    gender       varchar(255)  not null,
+    phone_number varchar(255)  not null
+        constraint UK_6v6x92wb400iwh6unf5rwiim4
+            unique,
+    updated_at   datetime2(6)
+)
+go
+
+create table dbo.permissions
+(
+    permission_id   bigint identity
+        primary key,
+    permission_type varchar(255),
+    account_id      bigint not null
+        constraint FKp6c9fhqxlx8d8u920x1qfuyig
+            references dbo.accounts
+)
+go
+
+create table dbo.product
+(
+    product_id   bigint identity
+        primary key,
+    description  varchar(255),
+    name_product varchar(255)   not null
+        constraint UK_l13mi6rukx4xkfv63cmiib1jg
+            unique,
+    price        numeric(38, 2) not null,
+    product_type varchar(255)   not null,
+    quantity     int            not null,
+    status       varchar(255)   not null,
+    account_id   bigint         not null
+        constraint FK1sen94nqex5c38mb6tcl9yvk9
+            references dbo.accounts,
+    category_id  bigint         not null
+        constraint FKowomku74u72o6h8q0khj7id8q
+            references dbo.categories
+)
+go
+
+create table dbo.images
+(
+    image_id        bigint identity
+        primary key,
+    image_type      varchar(255) not null,
+    image_url       varchar(255),
+    account_id      bigint
+        constraint FKe21gm4ia851bfavsak0fea92t
+            references dbo.accounts,
+    category_id     bigint
+        constraint FKbs9q39413hnr6t0k0vy79uj3b
+            references dbo.categories,
+    product_id      bigint
+        constraint FK8sfun6tj1hqb85ed52o8mkqyh
+            references dbo.product,
+    product_type_id bigint
+        constraint FKay2vbmywa75gobtc9oo46y1x8
+            references dbo.product
+)
+go
+
+create table dbo.orders
+(
+    order_id       bigint identity
+        primary key,
+    code_id        varchar(255)   not null,
+    order_date     datetime2(6)   not null,
+    order_status   varchar(255)   not null,
+    payment_method varchar(255)   not null,
+    quantity       int            not null,
+    total_amount   numeric(38, 2) not null,
+    account_id     bigint         not null
+        constraint FKagh5svlor3slbay6tq5wqor1o
+            references dbo.accounts,
+    product_id     bigint         not null
+        constraint FK787ibr3guwp6xobrpbofnv7le
+            references dbo.product
+)
+go
+
+create table dbo.software_accounts
+(
+    software_account_id bigint identity
+        primary key,
+    account_info        varchar(255) not null,
+    code_id             varchar(255) not null,
+    created_at          datetime2(6) not null,
+    deleted             bit          not null,
+    payment_status      varchar(255) not null,
+    status              varchar(255) not null,
+    updated_at          datetime2(6),
+    account_id          bigint       not null
+        constraint FKox967ton61fl41039b453neq0
+            references dbo.accounts,
+    product_id          bigint       not null
+        constraint FKs254o3vy76wuwf215ea2xe7r7
+            references dbo.product
+)
+go
+
+create table dbo.software_license_keys
+(
+    license_id     bigint identity
+        primary key,
+    code_id        varchar(255) not null,
+    created_at     datetime2(6) not null,
+    deleted        bit          not null,
+    license_key    varchar(255) not null,
+    payment_status varchar(255) not null,
+    status         varchar(255) not null,
+    updated_at     datetime2(6),
+    account_id     bigint       not null
+        constraint FKe01vcrkgmxovfypqsbwthgftc
+            references dbo.accounts,
+    product_id     bigint       not null
+        constraint FK13q4e85hyhg48x6759mphmhwf
+            references dbo.product
+)
+go
+
+create table dbo.verification_code
+(
+    verification_code_id bigint identity
+        primary key,
+    code                 varchar(255),
+    email                varchar(255),
+    account_id           bigint
+        constraint FKjy53tw228oda94k4d99rcuvc8
+            references dbo.accounts
+)
+go
+
+
+-- Insert into dbo.accounts
+INSERT INTO dbo.accounts (balance, created_at, email, full_name, password_hash, role, status, updated_at, username)
+VALUES
+(0.00, N'2024-05-25 16:49:05.176761', N'john.doe@gmail.com', N'John Doe', N'$2a$10$LIa0oxwDHXArUsY.wnVCD.ZwlqDvE9KXnRFTsP3guPX06WYUKYAIu', N'SELLER', N'ACTIVE', N'2024-05-25 16:49:05.176761', N'johndoe'),
+(0.00, N'2024-05-25 16:49:49.721124', N'jane.smith@gmail.com', N'Jane Smith', N'$2a$10$xYgpYpGUd.Gh5RO0BVI0OuyGIRxEUQ.X5jsqLlHIyzIrQRj7nUCXy', N'SELLER', N'ACTIVE', N'2024-05-25 16:49:49.721124', N'janesmith'),
+(0.00, N'2024-05-25 16:53:01.237138', N'alice.jones@gmail.com', N'Alice Jones', N'$2a$10$Ur1xTTnhi2UjBCP280RS6u2ZssJfSjk3/p3dPz34yTCCod6I/6CLC', N'SELLER', N'ACTIVE', N'2024-05-25 16:53:01.237138', N'alicejones'),
+(0.00, N'2024-05-25 16:53:55.556623', N'bob.brown@gmail.com', N'Bob Brown', N'$2a$10$W8icvscog5f7aoGyFYROV.9rByszq6WqJ3L6YTvUXS5oXFc3lFPmO', N'SELLER', N'ACTIVE', N'2024-05-25 16:53:55.556623', N'bobbrown');
+GO
+
+-- Insert into dbo.categories
+INSERT INTO dbo.categories (description, name, status, account_id)
+VALUES
+(N'Entertainment', N'Entertainment', N'ACTIVE', 1),
+(N'Work', N'Work', N'ACTIVE', 1),
+(N'Study', N'Study', N'ACTIVE', 1),
+(N'Game Steam', N'Game Steam', N'ACTIVE', 1),
+(N'Edit Photos Videos', N'Edit Photos Videos', N'ACTIVE', 1),
+(N'Google Drive', N'Google Drive', N'ACTIVE', 1),
+(N'Virus Removal', N'Virus Removal', N'ACTIVE', 1),
+(N'Window', N'Window', N'ACTIVE', 1);
+GO
+
+-- Insert into dbo.images for categories
+INSERT INTO dbo.images (image_type, image_url, account_id, category_id, product_id, product_type_id)
+VALUES
+(N'CATEGORY_IMAGE', N'Images\Category\Entertainment.png', 1, 1, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Work.png', 1, 2, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Study.png', 1, 3, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Game-Steam.png', 1, 4, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Edit-Photos-Videos.png', 1, 5, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Google-Drive.png', 1, 6, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Virus-Removal.png', 1, 7, NULL, NULL),
+(N'CATEGORY_IMAGE', N'Images\Category\Window.png', 1, 8, NULL, NULL);
+GO
+
+-- Insert into dbo.product
+INSERT INTO dbo.product (description, name_product, price, product_type, quantity, status, account_id, category_id)
+VALUES
+(N'Premium Netflix Account', N'Premium Netflix Account', 10.00, N'ACCOUNT', 0, N'AVAILABLE', 1, 1),
+(N'Adobe', N'Adobe', 10.00, N'ACCOUNT', 0, N'AVAILABLE', 1, 5),
+(N'Window 10', N'Window 10', 99.00, N'KEY', 0, N'AVAILABLE', 1, 8),
+(N'Duolingo', N'Duolingo', 10.00, N'ACCOUNT', 0, N'AVAILABLE', 1, 3),
+(N'Google Drive 500gb', N'Google Drive 500gb', 49.00, N'ACCOUNT', 0, N'AVAILABLE', 1, 6),
+(N'Steam Wallet Code 160 HKD', N'STEAM160HKDWallet', 20.00, N'KEY', 0, N'AVAILABLE', 1, 4),
+(N'Canva Pro', N'Canva Pro', 10.00, N'ACCOUNT', 0, N'AVAILABLE', 1, 5),
+(N'ChatGPT ', N'ChatGPT ', 20.00, N'ACCOUNT', 0, N'AVAILABLE', 1, 2),
+(N'ESET Endpoint Security', N'ESET Endpoint Security', 20.00, N'KEY', 0, N'AVAILABLE', 1, 7),
+(N'Microsoft 365 (Office 365)', N'Microsoft 365 (Office 365)', 19.00, N'KEY', 0, N'AVAILABLE', 1, 2);
+GO
+
+-- Insert into dbo.images for products
+INSERT INTO dbo.images (image_type, image_url, account_id, category_id, product_id, product_type_id)
+VALUES
+(N'PRODUCT_IMAGE', N'Images\Product\1_NETFLIX-2.png', 1, NULL, 1, NULL),
+(N'PRODUCT_IMAGE', N'Images\Product\Adobe.png', 1, NULL, 2, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\Windows-10-Key-38151.png', 1, NULL, 3, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\Duolingo_Account.jpg', 1, NULL, 4, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\Google-Drive-500gb-29699.png', 1, NULL, 5, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\STEAM160HKDWallet.png', 1, NULL, 6, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\Canva-giahan.png', 1, NULL, 7, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\OpenAI---ChatGPT.jpg', 1, NULL, 8, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\ESET-Endpoint-Security-16037.jpg', 1, NULL, 9, NULL), -- Corrected product_id
+(N'PRODUCT_IMAGE', N'Images\Product\Microsoft-365-1y-23055.png', 1, NULL, 10, NULL); -- Corrected product_id
+GO

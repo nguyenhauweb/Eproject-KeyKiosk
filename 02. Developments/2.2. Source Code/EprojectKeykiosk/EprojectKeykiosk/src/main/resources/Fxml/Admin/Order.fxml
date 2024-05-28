@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="reset" prefHeight="740.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.OrderController">
+   <children>
+      <Label layoutX="565.0" layoutY="39.0" prefHeight="23.0" prefWidth="141.0" styleClass="classText" text="Order Manager" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="450.0" AnchorPane.topAnchor="30.0">
+         <font>
+            <Font name="Tahoma Bold" size="18.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="6.0" layoutY="114.0" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" prefHeight="611.0" prefWidth="1065.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="9.0">
+         <children>
+            <HBox layoutX="305.0" layoutY="13.333333333333334" prefHeight="55.0" prefWidth="754.0" style="-fx-background-color: #2F3C7E;" styleClass="container" stylesheets="@../../Styles/Order.css" AnchorPane.bottomAnchor="543.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="13.0">
+               <children>
+                  <TextField fx:id="searchField" prefHeight="29.0" prefWidth="294.0" promptText="Search OrderID...">
+                     <HBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </HBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </TextField>
+                  <Label prefHeight="17.0" prefWidth="80.0" styleClass="classText" stylesheets="@../../Styles/Order.css" text="Order Status: ">
+                     <HBox.margin>
+                        <Insets left="30.0" top="15.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ComboBox fx:id="comboBoxStatus" prefWidth="150.0" promptText=" All Order">
+                     <HBox.margin>
+                        <Insets left="5.0" top="10.0" />
+                     </HBox.margin></ComboBox>
+                  <Button fx:id="exportInvoiceToPDF" mnemonicParsing="false" text="Export PDF">
+                     <HBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <TableView fx:id="orderTableView" layoutX="310.0" layoutY="67.0" prefHeight="532.0" prefWidth="755.0" styleClass="centered" stylesheets="@../../Styles/Products.css" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="305.0" AnchorPane.rightAnchor="5.0">
+               <columnResizePolicy>
+                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+               </columnResizePolicy>
+            </TableView>
+            <VBox layoutX="14.0" layoutY="14.0" prefHeight="585.0" prefWidth="277.0" style="-fx-background-color: #2F3C7E;" AnchorPane.bottomAnchor="12.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0">
+               <children>
+                  <Label text="Product: " textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="55.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="txtNameProduct" prefHeight="25.0" prefWidth="283.0" promptText="Product">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <Label text="Quantity:" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="txtQuantityOrder" prefHeight="25.0" prefWidth="171.0">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin></TextField>
+                  <Label text="Payment Method:" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" top="30.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Tahoma Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="txtPaymentMethod" prefHeight="25.0" prefWidth="315.0" promptText="Payment Method">
+                     <VBox.margin>
+                        <Insets left="10.0" right="10.0" />
+                     </VBox.margin>
+                  </ComboBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="btnUpdate" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: FEA837;" styleClass="classBtnAction" stylesheets="@../../Styles/Order.css" text="Update" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="60.0" top="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="btnDelete" mnemonicParsing="false" prefHeight="31.0" prefWidth="100.0" style="-fx-background-color: #e94d67;" styleClass="classBtnAction" stylesheets="@../../Styles/Order.css" text="Delete" textFill="WHITE">
+                           <HBox.margin>
+                              <Insets left="20.0" right="10.0" top="20.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+   <stylesheets>
+      <URL value="@../../Styles/Feedback.css" />
+      <URL value="@../../Styles/Order.css" />
+   </stylesheets>
+   <styleClass>
+      <String fx:value="my-container" />
+      <String fx:value="container" />
+   </styleClass>
+</AnchorPane>

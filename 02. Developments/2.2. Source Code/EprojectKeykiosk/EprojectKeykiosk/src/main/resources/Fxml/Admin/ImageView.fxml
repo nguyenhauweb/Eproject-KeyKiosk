@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="600" prefWidth="800" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.ImageController">
+
+        <TableView fx:id="imageTableView" prefHeight="600" prefWidth="800">
+            <columns>
+                <TableColumn fx:id="imageIdColumn" text="Image ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="imageId" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="imageUrlColumn" text="Image URL">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="imageUrl" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="imageTypeColumn" text="Image Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="imageType" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="fileNameColumn" text="File Name">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="fileName" />
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="fileSizeColumn" text="File Size">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="fileSize" />
+                    </cellValueFactory>
+                </TableColumn>
+            <TableColumn fx:id="imageColumn" text="imageColumn">
+               <cellValueFactory>
+                  <PropertyValueFactory property="fileSize" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="categoryIdColumn" text="categoryNameColumn">
+               <cellValueFactory>
+                  <PropertyValueFactory property="fileSize" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="categoryNameColumn" text="categoryNameColumn">
+               <cellValueFactory>
+                  <PropertyValueFactory property="fileSize" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="categoryDescriptionColumn" text="categoryDescriptionColumn">
+               <cellValueFactory>
+                  <PropertyValueFactory property="fileSize" />
+               </cellValueFactory>
+            </TableColumn>
+            </columns>
+        </TableView>
+
+        <VBox alignment="CENTER" spacing="10">
+            <Button fx:id="selectImageButton" prefWidth="100" text="Select Image" />
+            <Button fx:id="insertButton" prefWidth="100" text="Insert Image" />
+            <Button fx:id="delete_btn" prefWidth="100" text="Delete Image" />
+            <Button fx:id="updateButton" prefWidth="100" text="Update Image" />
+        </VBox>
+
+</AnchorPane>

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefWidth="500.0" styleClass="container" stylesheets="@../../Styles/Reset.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.keykiosk.Controllers.Admin.CreateProductController">
+   <children>
+      <VBox alignment="CENTER_LEFT" styleClass="background-color-panel" AnchorPane.leftAnchor="-11.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="-11.0">
+         <children>
+            <Label text="ADD NEW PRODUCT" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Line endX="73.69286346435547" endY="0.41423264145851135" startX="-100.0" stroke="WHITE" />
+         </children>
+      </VBox>
+      <HBox layoutX="9.6" layoutY="101.60000000000001" prefWidth="550.0" spacing="20.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="55.0">
+         <children>
+            <VBox prefHeight="298.0" prefWidth="250.0" styleClass="form-container">
+               <children>
+                  <Label text="Name">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nameProductField" />
+                  <Label text="Price">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="priceProductField" />
+                  <Label text="Description">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="descriptionProductTextArea" prefHeight="100.0" prefWidth="200.0" />
+               </children>
+            </VBox>
+            <VBox prefWidth="250.0" styleClass="form-container">
+               <children>
+                  <Label text="Upload Image" />
+                  <VBox alignment="CENTER" spacing="10.0">
+                     <children>
+                        <ImageView fx:id="changeImages" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/upload.png" />
+                           </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Image size must be less than 1Mb" />
+                     </children>
+                  </VBox>
+                  <Button fx:id="selectImageButton" mnemonicParsing="false" prefWidth="254.0" styleClass="light-gray-button" text="Upload Image" />
+                  <Label text="Product Type">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="productTypeComboBox" prefHeight="2.0" prefWidth="254.0" promptText="-- Select product type --" />
+                  <Label text="Category">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="categoryComboBox" prefWidth="254.0" promptText="-- Select category --" />
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="31.200000000000003" layoutY="380.79999999999995" prefWidth="450.0" spacing="15.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="375.0">
+         <children>
+            <Button fx:id="addnewButton" mnemonicParsing="false" prefWidth="336.0" styleClass="green-button" text="Add new">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-plus-24.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <Button fx:id="cancelButton" mnemonicParsing="false" prefWidth="336.0" styleClass="red-button" text="Cancel">
+               <graphic>
+                  <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icon-x.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
